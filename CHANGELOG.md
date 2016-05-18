@@ -1,3 +1,8 @@
+## [2.0.0](https://github.com/defn/vagrant-limbo) (May 17, 2016)
+
+Forking `vagrant-cachier` to use as a base for a plugin, which happens
+to do caching, among other things, for the `defn/limbo` project.
+
 ## [1.2.1](https://github.com/fgrehm/vagrant-cachier/compare/v1.2.0...v1.2.1) (July 3, 2015)
 
 IMPROVEMENTS:

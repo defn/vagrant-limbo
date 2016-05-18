@@ -1,8 +1,0 @@
-SITE
-  remote: http://community.opscode.com/api/v1
-  specs:
-    java (1.19.2)
-
-DEPENDENCIES
-  java (>= 0)
-
