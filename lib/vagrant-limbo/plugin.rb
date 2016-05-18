@@ -1,14 +1,14 @@
 unless Gem::Requirement.new('>= 1.4.0').satisfied_by?(Gem::Version.new(Vagrant::VERSION))
-  raise 'vagrant-cachier requires Vagrant >= 1.4.0 in order to work!'
+  raise 'vagrant-limbo requires Vagrant >= 1.4.0 in order to work!'
 end
 
 # Add our custom translations to the load path
 I18n.load_path << File.expand_path("../../../locales/en.yml", __FILE__)
 
 module VagrantPlugins
-  module Cachier
+  module Limbo
     class Plugin < Vagrant.plugin('2')
-      name 'vagrant-cachier'
+      name 'vagrant-limbo'
       config 'cache' do
         require_relative "config"
         Config

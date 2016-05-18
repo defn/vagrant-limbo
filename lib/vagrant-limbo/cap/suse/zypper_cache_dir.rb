@@ -1,5 +1,5 @@
 module VagrantPlugins
-  module Cachier
+  module Limbo
     module Cap
       module SuSE
         module ZypperCacheDir

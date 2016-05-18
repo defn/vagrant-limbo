@@ -1,5 +1,5 @@
 module VagrantPlugins
-  module Cachier
+  module Limbo
     class Plugin < Vagrant.plugin('2')
       guest_capability 'linux', 'gemdir' do
         require_relative 'cap/linux/gemdir'

@@ -1,5 +1,5 @@
 module VagrantPlugins
-  module Cachier
+  module Limbo
     class Bucket
       class Pacman < Bucket
         def self.capability
@@ -11,7 +11,7 @@ module VagrantPlugins
             guest_path = guest.capability(:pacman_cache_dir)
             symlink(guest_path)
           else
-            @env[:ui].info I18n.t('vagrant_cachier.skipping_bucket', bucket: 'Pacman')
+            @env[:ui].info I18n.t('vagrant_limbo.skipping_bucket', bucket: 'Pacman')
           end
         end
       end

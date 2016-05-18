@@ -1,5 +1,5 @@
 module VagrantPlugins
-  module Cachier
+  module Limbo
     class Bucket
       class ChefGem < Bucket
         def self.capability
@@ -16,7 +16,7 @@ module VagrantPlugins
               symlink(gem_cache_path, bucket_path)
             end
           else
-            @env[:ui].info I18n.t('vagrant_cachier.skipping_bucket', bucket: 'ChefRubyGems')
+            @env[:ui].info I18n.t('vagrant_limbo.skipping_bucket', bucket: 'ChefRubyGems')
           end
         end
       end

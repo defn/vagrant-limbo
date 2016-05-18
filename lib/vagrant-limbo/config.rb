@@ -1,5 +1,5 @@
 module VagrantPlugins
-  module Cachier
+  module Limbo
     class Config < Vagrant.plugin(2, :config)
       attr_accessor :scope, :auto_detect, :synced_folder_opts
       attr_reader   :buckets
@@ -21,18 +21,18 @@ module VagrantPlugins
         errors = _detected_errors
 
         if enabled? && backed_by_cloud_provider?(machine)
-          machine.ui.warn(I18n.t('vagrant_cachier.backed_by_cloud_provider',
+          machine.ui.warn(I18n.t('vagrant_limbo.backed_by_cloud_provider',
                                  provider: machine.provider_name))
           disable!
         end
 
         if enabled? && ! ALLOWED_SCOPES.include?(@scope.to_s)
-          errors << I18n.t('vagrant_cachier.unknown_cache_scope',
+          errors << I18n.t('vagrant_limbo.unknown_cache_scope',
                             allowed:     ALLOWED_SCOPES.inspect,
                             cache_scope: @scope)
         end
 
-        { "vagrant cachier" => errors }
+        { "vagrant limbo" => errors }
       end
 
       def enabled?

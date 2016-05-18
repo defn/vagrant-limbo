@@ -1,5 +1,5 @@
 en:
-  vagrant_cachier:
+  vagrant_limbo:
     cleanup: |-
       Removing cache buckets symlinks...
     skipping_bucket: |-
@@ -10,7 +10,7 @@ en:
       The '%{bucket}' cache bucket requires NFS to be enabled, please add
       `config.cache.synced_folder_opts = {type: :nfs}` to your Vagrantfile.
     unable_to_ssh: |-
-      vagrant-cachier was unable to SSH into the VM to remove symlinks!
+      vagrant-limbo was unable to SSH into the VM to remove symlinks!
     backed_by_cloud_provider: |-
       The machine is backed by a cloud provider (%{provider}), caching
       will be disabled.

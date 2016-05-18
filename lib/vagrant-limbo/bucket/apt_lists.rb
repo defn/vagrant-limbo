@@ -1,5 +1,5 @@
 module VagrantPlugins
-  module Cachier
+  module Limbo
     class Bucket
       class AptLists < Bucket
         def self.capability
@@ -8,7 +8,7 @@ module VagrantPlugins
 
         def install
           # Apt lists bucket can't be used on windows hosts
-          #   https://github.com/fgrehm/vagrant-cachier/issues/106
+          #   https://github.com/fgrehm/vagrant-limbo/issues/106
           return if Vagrant::Util::Platform.windows?
 
           if guest.capability?(:apt_lists_dir)
@@ -19,7 +19,7 @@ module VagrantPlugins
             symlink(guest_path)
             comm.execute("mkdir -p /tmp/vagrant-cache/#{@name}/partial")
           else
-            @env[:ui].info I18n.t('vagrant_cachier.skipping_bucket', bucket: 'apt-lists')
+            @env[:ui].info I18n.t('vagrant_limbo.skipping_bucket', bucket: 'apt-lists')
           end
         end
       end

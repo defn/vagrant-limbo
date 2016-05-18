@@ -1,5 +1,5 @@
 module VagrantPlugins
-  module Cachier
+  module Limbo
     class Bucket
       def self.inherited(base)
         @buckets ||= []

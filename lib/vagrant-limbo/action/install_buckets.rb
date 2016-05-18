@@ -1,12 +1,12 @@
 require_relative '../bucket'
 
 module VagrantPlugins
-  module Cachier
+  module Limbo
     class Action
       class InstallBuckets
         def initialize(app, env, opts = {})
           @app    = app
-          @logger = Log4r::Logger.new("vagrant::cachier::action::clean")
+          @logger = Log4r::Logger.new("vagrant::limbo::action::clean")
           @opts   = opts
         end
 
@@ -22,7 +22,7 @@ module VagrantPlugins
         def chmod_bucket_root(machine)
           machine.communicate.sudo 'mkdir -p /tmp/vagrant-cache'
 
-          # https://github.com/fgrehm/vagrant-cachier/issues/107
+          # https://github.com/fgrehm/vagrant-limbo/issues/107
           if ! smb_synced_folder_enabled?(machine)
             @logger.info "'chmod'ing bucket root dir to 777..."
             machine.communicate.sudo 'chmod 777 /tmp/vagrant-cache'

@@ -1,5 +1,5 @@
 module VagrantPlugins
-  module Cachier
+  module Limbo
     class Bucket
       class Pip < Bucket
         def self.capability
@@ -13,7 +13,7 @@ module VagrantPlugins
               symlink("#{guest_path}/wheels", "/tmp/vagrant-cache/#{@name}/wheels")
             end
           else
-            @env[:ui].info I18n.t('vagrant_cachier.skipping_bucket', bucket: 'pip')
+            @env[:ui].info I18n.t('vagrant_limbo.skipping_bucket', bucket: 'pip')
           end
         end
       end

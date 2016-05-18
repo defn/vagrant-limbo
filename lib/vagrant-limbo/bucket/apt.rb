@@ -1,5 +1,5 @@
 module VagrantPlugins
-  module Cachier
+  module Limbo
     class Bucket
       class Apt < Bucket
         def self.capability
@@ -15,7 +15,7 @@ module VagrantPlugins
             symlink(guest_path)
             comm.execute("mkdir -p /tmp/vagrant-cache/#{@name}/partial")
           else
-            @env[:ui].info I18n.t('vagrant_cachier.skipping_bucket', bucket: 'APT')
+            @env[:ui].info I18n.t('vagrant_limbo.skipping_bucket', bucket: 'APT')
           end
         end
       end

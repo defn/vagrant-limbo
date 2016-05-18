@@ -1,12 +1,12 @@
 require 'timeout'
 
 module VagrantPlugins
-  module Cachier
+  module Limbo
     class Action
       class ConfigureBucketRoot
         def initialize(app, env)
           @app    = app
-          @logger = Log4r::Logger.new("vagrant::cachier::action::clean")
+          @logger = Log4r::Logger.new("vagrant::limbo::action::clean")
         end
 
         def call(env)
@@ -41,7 +41,7 @@ module VagrantPlugins
                 if @image_name
                   bucket_name = @image_name.gsub(':', '-')
                 else
-                  raise "Cachier plugin only supported with docker provider when image is used"
+                  raise "Limbo plugin only supported with docker provider when image is used"
                 end
               else
                 bucket_name = @box_name

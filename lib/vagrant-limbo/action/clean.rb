@@ -1,12 +1,12 @@
 require 'timeout'
 
 module VagrantPlugins
-  module Cachier
+  module Limbo
     class Action
       class Clean
         def initialize(app, env)
           @app    = app
-          @logger = Log4r::Logger.new("vagrant::cachier::action::clean")
+          @logger = Log4r::Logger.new("vagrant::limbo::action::clean")
         end
 
         def call(env)
@@ -14,7 +14,7 @@ module VagrantPlugins
           @machine = env[:machine]
 
           if symlinks.any?
-            env[:ui].info I18n.t('vagrant_cachier.cleanup')
+            env[:ui].info I18n.t('vagrant_limbo.cleanup')
             if sshable?
               symlinks.each do |symlink|
                 remove_symlink symlink
@@ -43,7 +43,7 @@ module VagrantPlugins
               end
             end
           rescue Timeout::Error
-            @env[:ui].warn(I18n.t('vagrant_cachier.unable_to_ssh'))
+            @env[:ui].warn(I18n.t('vagrant_limbo.unable_to_ssh'))
           end
 
           return false

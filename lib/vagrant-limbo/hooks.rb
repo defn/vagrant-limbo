@@ -1,7 +1,7 @@
 module VagrantPlugins
-  module Cachier
+  module Limbo
     class Plugin < Vagrant.plugin('2')
-      action_hook VagrantPlugins::Cachier::Plugin::ALL_ACTIONS do |hook|
+      action_hook VagrantPlugins::Limbo::Plugin::ALL_ACTIONS do |hook|
         require_relative 'action/configure_bucket_root'
         require_relative 'action/install_buckets'
 

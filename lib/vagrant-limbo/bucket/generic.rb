@@ -1,5 +1,5 @@
 module VagrantPlugins
-  module Cachier
+  module Limbo
     class Bucket
       class Generic < Bucket
         def install
@@ -15,7 +15,7 @@ module VagrantPlugins
             if conf.has_key?(:cache_dir)
               symlink(conf[:cache_dir], "/tmp/vagrant-cache/#{key}")
             else
-              @env[:ui].info I18n.t('vagrant_cachier.skipping_bucket', bucket: "Generic[#{key}]")
+              @env[:ui].info I18n.t('vagrant_limbo.skipping_bucket', bucket: "Generic[#{key}]")
             end
           end
 

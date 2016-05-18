@@ -1,5 +1,5 @@
 module VagrantPlugins
-  module Cachier
+  module Limbo
     class Bucket
       class Bower < Bucket
         def self.capability
@@ -12,7 +12,7 @@ module VagrantPlugins
               user_symlink(bower_path)
             end
           else
-            @env[:ui].info I18n.t('vagrant_cachier.skipping_bucket', bucket: 'Bower')
+            @env[:ui].info I18n.t('vagrant_limbo.skipping_bucket', bucket: 'Bower')
           end
         end
       end

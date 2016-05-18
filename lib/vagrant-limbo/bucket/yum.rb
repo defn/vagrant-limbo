@@ -1,5 +1,5 @@
 module VagrantPlugins
-  module Cachier
+  module Limbo
     class Bucket
       class Yum < Bucket
         def self.capability
@@ -16,7 +16,7 @@ module VagrantPlugins
 
             symlink(guest_path)
           else
-            @env[:ui].info I18n.t('vagrant_cachier.skipping_bucket', bucket: 'Yum')
+            @env[:ui].info I18n.t('vagrant_limbo.skipping_bucket', bucket: 'Yum')
           end
         end
       end
